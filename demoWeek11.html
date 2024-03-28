@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W11 Discussion Demo</title>
+    <style>
+		p{
+			background-color: #B5B5B3;
+			border: 3px solid #FFFFFF;
+			padding: 3%;
+			font-size: 1.1em;
+			line-height: 1.5;
+		}
+	</style>
+    <script>
+       function displayInformation() {
+        console.log(document.querySelector("h1"));
+        let heading = String(document.querySelector("h1").innerHTML);
+        document.querySelector("h1").innerHTML = heading.toUpperCase();
+        document.getElementById("day").innerHTML="Thursday";
+        document.querySelector("#day").style.color = "#0000FF";
+        document.querySelector("#day").style.fontWeight = 'bold';
+        document.querySelector("#day").style.fontSize = '25px';
+       }
+
+       function getHelloText() {
+        let text = document.getElementById("day").textContent;
+
+        document.getElementById("demo").innerHTML += "</br>" + text;
+        
+        if(text!="Thursday"){
+            document.getElementById("demo").style.color="red";
+        }
+
+       }
+
+    </script>
+</head>
+<body onload = "displayInformation();">
+    <h1>This will turn to uppercase</h1>
+    <p>
+		Today is <span id = "day"></span><br/>
+	</p>
+    <button onclick="getHelloText()">Get Hello Text</button>
+    </br>
+    <div id="demo"></div>
+</body>
+</html>
